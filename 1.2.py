@@ -18,8 +18,6 @@ def z(x, y):
 v = complex(startValue * random(), startValue * random())
 lastV = v + complex(2 * c, 2 * c)
 
-print('asdasdasd')
-
 while (abs(v - lastV) > c):
     lastV = v
     x = v.real
