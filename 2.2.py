@@ -270,7 +270,6 @@ class ClassicGameplayState(GameState):
 
     def saveSession(self, fileName: str) -> None:
         file = open(fileName, 'xb')
-        print(self.__addedList)
         pickle.dump(self.__addedList, file)
     
     def loadSession(self, fileName: str) -> None:
@@ -284,7 +283,7 @@ class ClassicGameplayState(GameState):
         
         self.__addedList = savedList
 
-    def generate(self):
+    def generate(self) -> None:
         field: list[list[Optional[int]]] = [[] for i in range(9)]
         fl: list[int] = [1, 2, 3]
         sl: list[int] = [4, 5, 6]
@@ -304,7 +303,7 @@ class ClassicGameplayState(GameState):
             tl.append(tl[0])
             tl.pop(0)
         
-        for k in range(randrange(10)):
+        for k in range(randrange(50)):
             q: int =  randrange(2)
 
             if (q == 0):
